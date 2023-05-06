@@ -1,0 +1,26 @@
+# Demonstrates how a request method, headers and body can be specified
+
+### Get Example
+GET https://www.freeforexapi.com/api/live
+    ?pairs=NZDUSD
+
+
+### Using httpbin to echo back the request
+# Header are terminated by a blank line!
+POST https://httpbin.org/post HTTP/1.1
+content-type: application/application/json
+custom-header: custom value
+
+{
+    "name": "John",
+    "age": 31,
+    "city": "New York"
+}
+
+### Include the contents of a file in the request body
+POST https://httpbin.org/post
+content-type: application/application/json
+custom-header: custom value
+ts: {{$timestamp }}
+
+<@ ./test-data/03-sample-data.json

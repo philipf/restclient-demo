@@ -1,0 +1,9 @@
+# This example show a simple way to make your first HTTP call using REST client
+# It retrieves your public IP addres icanhazip.com
+
+# To execute the call you can:
+# 1. Click the `Send Request` link
+# 2. Press `Ctrl + Alt + R`
+
+https://icanhazip.com
+

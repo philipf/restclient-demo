@@ -1,0 +1,71 @@
+# Demonstrates the use of different type of variables:
+# System variables (contains a leading $, e.g. {{$guid}})
+# Custom variables (e.g. {{myVariable}} )
+# - Environment variables
+# - File variables
+# - Prompt variables
+# - Request variables
+
+# To create an Environment file
+# 1. F1 -> Open Settings (UI)
+# 2. Open Workspace tab
+# 3. Search for the REST client extension
+# 4. Click Edit on Rest-client: Environment Variables
+# 5 Update the settings in the ./.vscode/settings.json file
+
+### System variables
+POST {{httpbin}}/anything 
+api-govt-nz-RequestId: {{$guid}}
+
+{
+    "created_at": "{{$timestamp}}",
+    "computer_name": "{{$processEnv COMPUTERNAME}}"
+}
+
+
+### Environment variables
+POST {{httpbin}}/anything
+
+{
+    "value1": "{{path}}"
+}
+
+
+### Prompt variables
+# @prompt says What does the cat say?
+https://cataas.com/cat/says/{{says}}
+
+
+### File variables
+# Applies to all requests in the file
+
+@baseUrl = {{httpbin}}/anything
+@myVariable1 = blah
+@myVariable2 = {{$datetime iso8601}}
+@myVariable3 = 123
+
+POST {{baseUrl}}/{{myVariable3}}   
+Content-Type: application/json
+
+{
+    "value1": "{{myVariable1}}",
+    "value2": "{{myVariable2}}"
+}
+
+
+### Request variables 1/2
+
+# @name loginForm
+POST {{baseUrl}}/anything/login   
+Content-Type: application/x-www-form-urlencoded
+
+name=foo&password=bar
+
+### Request variables 2/2
+@authToken = {{loginForm.response.body.headers.X-Amzn-Trace-Id}}
+
+# @name secureCall
+POST {{baseUrl}}/anything/secure-call
+Authorization: {{authToken}}
+
+

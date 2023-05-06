@@ -1,0 +1,39 @@
+{
+    "id": "{{$guid}}",
+    "ts": "{{$timestamp}}",
+    "datetime": "{{$datetime iso8601}}",
+    "name": "John",
+    "age": 30,
+    "address": {
+      "street": "123 Main St",
+      "city": "Anytown",
+      "state": "CA"
+    },
+    "hobbies": [
+      {
+        "name": "Running",
+        "duration": "1 hour"
+      },
+      {
+        "name": "Reading",
+        "duration": "2 hours"
+      }
+    ],
+    "family": {
+      "spouse": {
+        "name": "Jane",
+        "age": 28
+      },
+      "children": [
+        {
+          "name": "Sara",
+          "age": 5
+        },
+        {
+          "name": "Tom",
+          "age": 3
+        }
+      ]
+    }
+  }
+  

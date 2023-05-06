@@ -1,0 +1,31 @@
+{
+    "rest-client.environmentVariables": {
+        "$shared": {
+            "originatingMachine": "My Laptop",
+            "httpbin": "https://httbin.org"
+        },
+
+        "local": {
+            "path": "https://local.example.com",
+
+            "aadV2ClientId": "",
+            "aadV2ClientSecret": "",
+            "aadV2AppUri": "",
+            "aadV2TenantId": "",
+
+            "localHttpbin": "http://localhost:8884"
+        },
+
+        "sit": {
+            "path": "https://sit.example.com"
+        },
+
+        "uat": {
+            "path": "https://uat.example.com"
+        }
+    },
+
+    "rest-client.enableTelemetry": false,
+    "rest-client.previewResponsePanelTakeFocus": false,
+    "rest-client.previewOption": "full"
+}

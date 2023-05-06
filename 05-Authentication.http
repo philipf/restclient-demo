@@ -1,0 +1,8 @@
+
+POST {{localHttpbin}}/anything
+Authorization: Bearer {{$aadV2Token appOnly}}
+
+###
+
+GET https://graph.microsoft.com/v1.0/me
+Authorization: Bearer {{$aadV2Token}}

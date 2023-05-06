@@ -1,0 +1,5 @@
+
+#Ignore thumbnails created by Windows
+Thumbs.db
+#Ignore any secrets that might have been accidentally committed
+/.vscode/settings.json
