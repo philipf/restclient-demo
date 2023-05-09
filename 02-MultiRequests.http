@@ -1,8 +1,8 @@
 # Request format and multiple commands
 # To split requests a delimiter is used - `###`
 # This will generate a `Send Request` for each request
-# Make sure to place your cursor in the request block when executing the request using 
-# Ctrl+Alt+R or Cmd+Alt+R
+# Make sure to place your cursor in the request block when executing 
+#the request using Ctrl+Alt+R or Cmd+Alt+R
 
 ### Simple request
 https://canhazip.com
@@ -11,5 +11,5 @@ https://canhazip.com
 https://api.publicapis.org/entries
 
 ### Cat as a service, with a custom message
-https://cataas.com/cat/says/REST%20client%20is%20cool
+https://cataas.com/cat/says/REST%20Client%20is%20cool
 
