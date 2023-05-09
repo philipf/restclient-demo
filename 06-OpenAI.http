@@ -1,0 +1,79 @@
+
+@openApiKey = {{$processEnv OPEN_API_KEY1}}
+
+POST https://api.openai.com/v1/completions
+Content-Type: application/json
+Authorization: Bearer {{openApiKey}}
+
+{
+    "model": "text-davinci-003",
+    "prompt": "Build a markdown table with 5 safest cities in the world and their safety index.",
+    "max_tokens": 100,
+    "temperature": 0.9
+}
+
+### Retrieve detail about the text-davinci-003 model
+
+GET https://api.openai.com/v1/models/text-davinci-003
+Authorization: Bearer {{openApiKey}}
+
+### Retrieve detail about the gpt-3.5-turbo model
+
+GET https://api.openai.com/v1/models/gpt-3.5-turbo
+Authorization: Bearer {{openApiKey}}
+
+
+### Example of a Chat Completion using Few-Shot prompting
+POST https://api.openai.com/v1/chat/completions
+Content-Type: application/json
+Authorization: Bearer {{openApiKey}}
+
+{
+    "model": "gpt-3.5-turbo",
+    "messages": [
+        { "role": "system",    "content": "You are a chatbot that takes input from the the user and responds with a sentiment and summary that indicates if the sentiment is positive or negative."},
+        { "role": "user",      "content": "I just won a race, I cannot believe it!. Summary" },
+        { "role": "assistant", "content": "Result=Ecstatic and surprised,Summary=Postive"},
+        { "role": "user",      "content": "I lost the race because of bad weather" }
+        ],
+    "max_tokens": 100,
+    "temperature": 0
+}
+
+
+### Example of edits
+POST https://api.openai.com/v1/edits
+Content-Type: application/json
+Authorization: Bearer {{openApiKey}}
+
+{
+    "model": "text-davinci-edit-001",
+    "instruction": "Fix spelling mistakes, grammar errors and include missing words",
+    "input": "The cat are on the tabel and playing with mouse",
+    "temperature": 0
+}
+
+
+### Image generation
+POST https://api.openai.com/v1/images/generations
+Content-Type: application/json
+Authorization: Bearer {{openApiKey}}
+
+{
+  "prompt": "A cat flying on a broomstick in the night sky, with a full moon in the background, that has been taken with a DSLR camera.",
+  "n": 2,
+  "size": "1024x1024"
+}
+
+
+### Embeddings
+ 
+POST https://api.openai.com/v1/embeddings
+Content-Type: application/json
+Authorization: Bearer {{openApiKey}}
+
+{
+  "model": "text-embedding-ada-002",
+  "input": "Hello World"
+}
+
